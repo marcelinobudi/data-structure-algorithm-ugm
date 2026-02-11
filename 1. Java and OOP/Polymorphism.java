@@ -1,5 +1,3 @@
-import java.lang.reflect.Method;
-
 import animal.*;
 
 /// Polymorphism
