@@ -43,5 +43,8 @@ public class Polymorphism {
         animal2.eat();
         animal2 = new Dog("Kitten"); // [animal2] kitten is TRANSFORMED into DOG!!
         animal2.eat();
+        System.out.println("#7 super.run() Experiment");
+        Cat cat3 = new Cat("Kiru");
+        cat3.run();
     }
 }

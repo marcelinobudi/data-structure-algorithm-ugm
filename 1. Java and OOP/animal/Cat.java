@@ -8,6 +8,7 @@ public class Cat extends Animal {
         System.out.println("Cat " + name + " is eating food");
     }
     public void run() {
+        super.run(); // using super to execute Parent code
         System.out.println("Cat " + name + " is running");
     }
 }
