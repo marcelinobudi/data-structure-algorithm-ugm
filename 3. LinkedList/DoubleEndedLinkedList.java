@@ -1,8 +1,6 @@
-
-// I never set delete last and insert last on SimpleLinkedList
-// Use double-ended for more efficient delete and insert last 
-public class SimpleLinkedList<T> {
+public class DoubleEndedLinkedList<T> {
     Node<T> head = null;
+    Node<T> tail = null;
 
     public boolean isEmpty() {
         return head == null;
@@ -11,11 +9,21 @@ public class SimpleLinkedList<T> {
     public void insertFirst(T data){
         Node<T> newNode = new Node<T>(data);
         if(isEmpty()){
-            head = newNode;
+            head = tail = newNode;
             return;
         }
         newNode.next = head;
         head = newNode;
+    }
+
+    public void insertLast(T data) {
+        Node<T> newNode = new Node<T>(data);
+        if(isEmpty()){
+            head = tail = newNode;
+            return;
+        }
+        tail.next = newNode;
+        tail = newNode;
     }
 
     public void deleteFirst(){
@@ -23,16 +31,16 @@ public class SimpleLinkedList<T> {
         head = head.next;
     }
 
-    // For exercise only,
-    // I want to do traversal for searching an object. It would returns a boolean value
-    public boolean search(T data){
-        if(isEmpty()) return false;
+    // prefer using Doubly Linked List if we handle deleteLast more frequent
+    public void deleteLast(){
+        if(isEmpty()) return;
         Node<T> temp = head;
-        while(temp != null){
-            if(temp.data.equals(data)) return true;
+        while (temp.next != tail) {
             temp = temp.next;
         }
-        return false;
+        temp.next = null;   // !!!IMPORTANT: Don't forget to make temp.next null!
+                            // If you forget, the tail never truly deleted
+        tail = temp;
     }
 
     public void display(){
@@ -50,5 +58,4 @@ public class SimpleLinkedList<T> {
         }
         System.out.println(" }");
     }
-
 }
