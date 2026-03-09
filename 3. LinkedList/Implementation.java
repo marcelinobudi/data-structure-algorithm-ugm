@@ -7,5 +7,7 @@ public class Implementation {
         persons.insertFirst(new Person("Kurose", "Researcher", (byte)27));
         persons.insertFirst(new Person("Rose", "Teaching Assistant", (byte)23));
         persons.display();
+        boolean searchingResult = persons.search(new Person("Kurose", "Researcher", (byte)27));
+        System.out.println("Hasil pencarian: " + searchingResult);
     }
 }

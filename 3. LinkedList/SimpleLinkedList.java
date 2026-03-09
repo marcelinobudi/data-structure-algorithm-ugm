@@ -20,11 +20,24 @@ public class SimpleLinkedList<T> {
         head = head.next;
     }
 
+    // For exercise only,
+    // I want to do traversal for searching an object. It would returns a boolean value
+    public boolean search(T data){
+        if(isEmpty()) return false;
+        Node<T> temp = head;
+        while(temp != null){
+            if(temp.data.equals(data)) return true;
+            temp = temp.next;
+        }
+        return false;
+    }
+
     public void display(){
         if(isEmpty()) {
             System.out.println("{}");
             return;
         }
+
         Node<T> temp = head;
         System.out.print("{ ");
         while (temp != null) {
@@ -32,7 +45,7 @@ public class SimpleLinkedList<T> {
             temp = temp.next;
             if(temp != null) System.out.print(" -> ");
         }
-        System.out.print(" }");
+        System.out.println(" }");
     }
 
 }
