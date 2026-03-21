@@ -1,16 +1,17 @@
 import java.util.Arrays;
+import java.lang.IndexOutOfBoundsException;
 
 public class Stack<T> {
-    private T[] arr;
+    private Object[] arr;
     private int top = -1;
     public Stack(int max){
-        arr = new T[max];
+        arr = new Object[max];
     }
-    public bool isEmpty(){
+    public boolean isEmpty(){
         return top == -1;
     }
 
-    public bool isFull(){
+    public boolean isFull(){
         return length() >= arr.length;
     }
 
@@ -20,23 +21,22 @@ public class Stack<T> {
 
     public void push(T element){
         if(isFull()) {
-            throw IndexOutOfBoundsException();
-            return;
+            throw new IndexOutOfBoundsException();
         }
         top++;
         arr[top] = element;
     }
-    public void pop(){
+    public T pop(){
         if(isEmpty()){
-            return;
+            return null;
         }
-        top--;
+        return (T) arr[top--];
     }
     public T getTop() {
         if(isEmpty()){
             return null;
         }
-        return arr[top];
+        return (T) arr[top];
     }
     @Override
     public String toString() {
