@@ -5,7 +5,7 @@ public class StackImplementation {
         System.out.println(isSymbolBalance("Aku (anton[ suka bermain [bola]])")); // true
         System.out.println(isSymbolBalance("Aku (anton[] suka bermain [bola])")); // true
         System.out.println(isSymbolBalance("Aku (}anton[] suka bermain [bola])")); // false
-        System.out.println(isSymbolBalance("Aku {{](anton[] suka bermain [bola])")); // true
+        System.out.println(isSymbolBalance("Aku {{](anton[] suka bermain [bola])")); // false
 
 
     }
