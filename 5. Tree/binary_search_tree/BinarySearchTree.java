@@ -86,8 +86,10 @@ public class BinarySearchTree {
             } else if(node.right == null){
                 return node.left;
             }
+            // AMBIL NODE paling kecil di right subtree
+            // letakan di NODE saat ini.
             node.value = minValue(node.right);
-            node.right = deleteResult(node.right, value);
+            node.right = deleteResult(node.right, node.value);
 
         }
         return node;
