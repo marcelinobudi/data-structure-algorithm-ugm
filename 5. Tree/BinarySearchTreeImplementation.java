@@ -4,7 +4,6 @@ import binary_search_tree.BinarySearchTree;
 public class BinarySearchTreeImplementation {
     public static void main(String[] args) {
         BinarySearchTree bst = new BinarySearchTree();
-        sou
         bst.addNode(8);
         bst.addNode(3);
         bst.addNode(1);
