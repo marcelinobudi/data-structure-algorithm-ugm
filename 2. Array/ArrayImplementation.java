@@ -5,6 +5,7 @@ public class ArrayImplementation {
         printExperiment(1);
         int intArray[] = new int[5];
         System.out.println(intArray); // it outputs address
+                                        // gunakan Arrays.toString()
         printExperiment(2);
         int intArray2[];
         // intArray2[] = new int[5]; // ERROR
