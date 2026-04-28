@@ -1,7 +1,18 @@
+
 import avl_tree.AVLTree;
+import avl_tree.Node;
 
 public class AVLTreeImplementation {
     public static void main(String[] args) {
+        // Node node = new Node(4);
+        // // node.right = new Node(5);
+        // node.left = new Node(3);
+        // node.left.left = new Node(2);
+        // node.left.height = 2;
+        // // node.right.height = 1;
+        // System.out.println(AVLTree.getBF(node));
+
+        // PRAKTIKUM
         AVLTree tree = new AVLTree();
         int[] values1 = {10, 20, 30, 40, 50, 25}; // These would make a BST look like a line.
 
