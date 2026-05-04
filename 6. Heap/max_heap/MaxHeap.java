@@ -26,25 +26,26 @@ public class MaxHeap {
 		if (l < size && this.arr.get(l) > this.arr.get(largest))
 			largest = l;
 
-		if (r < size && this.arr.get(r) > this.arr.get(largest))
+		if (r < size && this.arr.get(r) > this.arr.get(largest) )
 			largest = r;
 
-		if (largest != i) {
-            // SWAP
-			int temp = this.arr.get(largest); 
-			this.arr.set(largest, this.arr.get(i));  
-			this.arr.set(i, temp);    
-            
-            // REKURSIF ke index yg SEBELUMNYA DITUNJUK i (sekarang largest)!
-			heapify(largest); 
-		}
+		if(largest == i) return;
+
+		// SWAP
+		int temp = this.arr.get(largest); 
+		this.arr.set(largest, this.arr.get(i));  
+		this.arr.set(i, temp);    
+		// REKURSIF ke index yg SEBELUMNYA DITUNJUK i (sekarang largest)!
+		heapify(largest); 
+	
 	}
 
 	public void insert(int newNum) {
 		int size = this.arr.size();
-        this.arr.add(newNum); 
-		if(size != 0) {      
-			for (int i = size / 2 - 1; i >= 0; i = i/2-1) {
+        
+		if(size != 0) {   
+			this.arr.add(newNum);    
+			for (int i = size / 2 - 1; i >= 0; i=i/2-1) {
 				heapify(i);
 			}
 		}
@@ -69,7 +70,7 @@ public class MaxHeap {
 		this.arr.remove(size - 1);
 
         // heapify
-		for (int j = size / 2 - 1; j >= 0; j = j/2-1) {
+		for (int j = size / 2 - 1; j >= 0; j--) {
 			heapify(j);
 		}
 	}
