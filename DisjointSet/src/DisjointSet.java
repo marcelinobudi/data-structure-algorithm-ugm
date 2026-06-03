@@ -29,7 +29,8 @@ public class DisjointSet {
         return parent[node];
     }
 
-    public void union(int x, int y) {
+    // return value sukses melakukan union
+    public boolean union(int x, int y) {
         int rootX = find(x); // caching.
         int rootY = find(y);
 
@@ -37,7 +38,7 @@ public class DisjointSet {
          * Syarat union adalah root tidak boleh sama.
          * yg depthnya kecil, nempel ke yg depthnya besar
          */
-        if(rootX == rootY) return;
+        if(rootX == rootY) return false;
         if(rank[rootX] > rank[rootY]) {
             parent[rootY] = rootX;
         } else if(rank[rootY] > rank[rootX]) {
@@ -46,6 +47,7 @@ public class DisjointSet {
             parent[rootY] = rootX;
             rank[rootX]++; /** JANGAN LUPAKAN*/
         }
+        return  true;
     }
 
     public void printParents() {
