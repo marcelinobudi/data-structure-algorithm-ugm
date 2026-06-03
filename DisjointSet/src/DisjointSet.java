@@ -1,5 +1,11 @@
 import java.util.Arrays;
 
+
+/**
+ *
+ * CATAT
+ * Union return BOOLEAN
+ */
 public class DisjointSet {
     private int[] parent;
     private int[] rank;
@@ -40,7 +46,7 @@ public class DisjointSet {
          */
         if(rootX == rootY) return false;
         if(rank[rootX] > rank[rootY]) {
-            parent[rootY] = rootX;
+            parent[rootY] = rootX; // INGAT BAIK-BAIK DEFINISI DEPTH di Tree
         } else if(rank[rootY] > rank[rootX]) {
             parent[rootX] = rootY;
         } else {
